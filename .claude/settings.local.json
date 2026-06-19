@@ -1,0 +1,35 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch(domain:higgsfield.ai)",
+      "Bash(python3 *)",
+      "Bash(unzip *)",
+      "WebFetch(domain:www.dakshesh.site)",
+      "WebFetch(domain:dakshesh.site)",
+      "Read(//private/tmp/**)",
+      "Bash(rm -rf ref-site)",
+      "Bash(gh repo *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" https://github.com/devarayasaidakshesh/personal-website)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" https://www.dakshesh.site)",
+      "Bash(curl -sL https://www.dakshesh.site -o /tmp/live.html)",
+      "Read(//tmp/**)",
+      "Bash(mkdir -p live-assets)",
+      "Bash(curl -sL https://www.dakshesh.site/static/css/main.467cebcc.css -o live-assets/main.css)",
+      "Bash(curl -sL https://www.dakshesh.site/static/js/main.43722b01.js -o live-assets/main.js)",
+      "Bash(node -e ' *)",
+      "Bash(npm run *)",
+      "Bash(curl -s -o /dev/null -w \"status=%{http_code}\\\\n\" http://localhost:5179/)",
+      "Bash(curl -s http://localhost:5179/)",
+      "Bash(git init *)",
+      "Bash(git add *)",
+      "Bash(git rm *)",
+      "Bash(git -c user.name=\"Dakshesh Devaraya\" -c user.email=\"devarayasaidakshesh@gmail.com\" commit -q -m \"Initial portfolio — React + Vite + Tailwind\")",
+      "Bash(command -v gh)",
+      "Bash(gh auth *)"
+    ]
+  },
+  "enabledPlugins": {
+    "frontend-design@claude-plugins-official": true
+  }
+}
