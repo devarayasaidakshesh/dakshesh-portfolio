@@ -10,6 +10,7 @@ import Hero from './components/sections/Hero';
 import Services from './components/sections/Services';
 import Skills from './components/sections/Skills';
 import LiveBackground from './components/ui/LiveBackground';
+import { Analytics } from '@vercel/analytics/react';
 import './index.css';
 
 export default function App() {
@@ -32,6 +33,7 @@ export default function App() {
         <Contact />
       </main>
       <Footer />
+      <Analytics />
     </>
   );
 }
