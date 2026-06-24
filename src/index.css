@@ -13,7 +13,9 @@
     min-width: 320px;
     min-height: 100vh;
     overflow-x: hidden;
-    background: #070605;
+    /* Transparent so the fixed LiveBackground (-z-10) shows through.
+       html keeps the #070605 base behind the wallpaper. */
+    background: transparent;
     color: #ffffff;
     font-family: Manrope, system-ui, -apple-system, sans-serif;
     -webkit-font-smoothing: antialiased;

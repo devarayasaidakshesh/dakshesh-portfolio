@@ -35,17 +35,19 @@ export default function LiveBackground() {
       return Array.from({ length: n }, (_, i) => ({
         color: COLORS[i % COLORS.length],
         // Orbit centre, expressed as a fraction of the viewport.
-        cx: 0.15 + (i / n) * 0.7,
-        cy: 0.2 + ((i * 0.37) % 1) * 0.6,
+        // Clustered in the top-left corner; the rest of the page stays dark.
+        cx: 0.12 + (i / n) * 0.16,
+        cy: 0.06 + ((i * 0.37) % 1) * 0.14,
         // Lissajous amplitudes + frequencies — what makes them flow.
-        ax: 0.18 + (i % 3) * 0.05,
-        ay: 0.16 + (i % 2) * 0.07,
+        // Tightened so the blobs stay near the top-left while drifting.
+        ax: 0.08 + (i % 3) * 0.03,
+        ay: 0.06 + (i % 2) * 0.04,
         fx: 0.7 + (i % 3) * 0.25,
         fy: 0.5 + (i % 4) * 0.21,
         phase: (i / n) * Math.PI * 2,
         // Base radius as a fraction of the shorter screen side.
-        r: 0.32 + (i % 3) * 0.07,
-        a: 0.55 + (i % 3) * 0.12,
+        r: 0.48 + (i % 3) * 0.09,
+        a: 0.11 + (i % 3) * 0.03,
       }));
     };
 
@@ -112,7 +114,7 @@ export default function LiveBackground() {
         style={{ filter: 'blur(48px) saturate(1.25)' }}
       />
       {/* Vignette keeps the centre calm so content stays legible. */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_30%,rgba(5,4,3,0.55)_100%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,transparent_28%,rgba(5,4,3,0.74)_80%)]" />
       {/* Subtle film grain. */}
       <div className="absolute inset-0 opacity-[0.04] mix-blend-overlay bg-[url('/noise.svg')]" />
     </div>
